@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  /* color */
+  --color-primary: #F1F1F1;
+  --color-secondary: #C21D03;
+  --color-acent: #FBFBFB;
+  --color-text: #000000;
+  --color-btn: #FD5732;
+  --color-btn-acent: #FFB787;
+
+  /* font */
+  --font-poppins: "Poppins", sans-serif;
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;  /* Internet Explorer dan Edge */
+  scrollbar-width: none;     /* Firefox */
+  
+  &::-webkit-scrollbar {
+    display: none;           /* Chrome, Safari, dan Opera */
+  }
+}
