@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import Filter from "../../components/filter";
-import Search from "../../components/search";
-import CardThreads from "../../components/card-threads";
-import { useDispatch, useSelector } from "react-redux";
-import { asyncGetThreads } from "../../state/threads/action";
-import { asyncGetUsers } from "../../state/users/action";
+import React, { useEffect, useState } from 'react';
+import Filter from '../../components/filter';
+import Search from '../../components/search';
+import CardThreads from '../../components/card-threads';
+import { useDispatch, useSelector } from 'react-redux';
+import { asyncGetThreads } from '../../state/threads/action';
+import { asyncGetUsers } from '../../state/users/action';
 import {
   asyncToggleDownVoteThreads,
   asyncToggleUpVoteThreads,
-} from "../../state/votesThread/action";
+} from '../../state/votesThread/action';
 
 export default function Homepage() {
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("");
+  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState('');
   const authUser = useSelector((state) => state.authUser);
   const threads = useSelector((state) => state.threads);
   const users = useSelector((state) => state.users);
@@ -26,22 +26,22 @@ export default function Homepage() {
 
   // buat filter dan search
   const filterThreads = threads.filter((thread) => {
-    const title = thread.title.toLocaleLowerCase() || "";
+    const title = thread.title.toLocaleLowerCase() || '';
     const matchSearch = title.includes(search.toLowerCase());
     const matchCategory =
-      category === "" || category === "Pilih"
+      category === '' || category === 'Pilih'
         ? true
         : thread.category.toLowerCase() === category.toLocaleLowerCase();
     return matchSearch && matchCategory;
   });
 
   // buat vote
-    const toggleUpVoteThreads = (id) => {
-      console.log(id)
+  const toggleUpVoteThreads = (id) => {
+    console.log(id);
     dispatch(asyncToggleUpVoteThreads(id));
   };
-    const toggleDownVoteThreads = (id) => {
-        console.log(id)
+  const toggleDownVoteThreads = (id) => {
+    console.log(id);
     dispatch(asyncToggleDownVoteThreads(id));
   };
 
@@ -74,8 +74,8 @@ export default function Homepage() {
                   body={thread.body}
                   hastag={thread.category}
                   currentUserid={authUser?.id}
-                  author={author ? author.name : "Memuat nama..."}
-                  avatar={author ? author.avatar : ""}
+                  author={author ? author.name : 'Memuat nama...'}
+                  avatar={author ? author.avatar : ''}
                   upVotesBy={thread.upVotesBy}
                   downVotesBy={thread.downVotesBy}
                   totalComment={thread.totalComments}

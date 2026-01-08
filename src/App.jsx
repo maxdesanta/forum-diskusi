@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './App.css'
-import Router from './router/index'
+import './App.css';
+import Router from './router/index';
 import { useEffect } from 'react';
 import { asyncPreloadProcess } from './state/isPreload/action';
 
@@ -27,7 +27,7 @@ function App() {
     <>
       <Router />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

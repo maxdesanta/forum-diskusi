@@ -1,12 +1,12 @@
-import { ActionType } from "./action";
+import { ActionType } from './action';
 
 export default function AuthUserReducer(authUser = {}, action = {}) {
-    switch (action.type) {
-        case ActionType.SET_AUTH_USER:
-            return action.payload.authUser || {}
-        case ActionType.UNSET_AUTH_USER:
-            return null
-        default:
-            return authUser;
-    }
+  switch (action.type) {
+  case ActionType.SET_AUTH_USER:
+    return action.payload.authUser || {};
+  case ActionType.UNSET_AUTH_USER:
+    return null;
+  default:
+    return authUser;
+  }
 }
