@@ -18,7 +18,7 @@ function App() {
   if (isPreload) {
     return (
       <div className="flex items-center justify-center h-screen">
-        <p className="text-secondary font-bold animate-pulse">Loading...</p>
+        <p className="text-secondary font-bold animate-pulse">Loading</p>
       </div>
     );
   }
