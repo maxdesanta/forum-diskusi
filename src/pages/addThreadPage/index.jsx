@@ -31,7 +31,7 @@ export default function AddThreadPage() {
 
             <div className="relative w-full">
               <select name="category" className="w-full appearance-none text-text font-poppins p-2 rounded-md focus:outline-none cursor-pointer border-2 border-secondary" value={category} onChange={onCategoryChange}>
-                <option value={''}>Pilih</option>
+                <option value={''}>Select</option>
                 <option value={'HTML'}>HTML</option>
                 <option value={'Redux'}>Redux</option>
                 <option value={'Perkenalan'}>Perkenalan</option>
