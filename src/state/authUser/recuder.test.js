@@ -31,6 +31,6 @@ describe('testing auth user reducer', () => {
 
     const nextState = AuthUserReducer(initialState, action);
 
-    expect(nextState).toBeNull();
+    expect(nextstate).toBeNull();
   });
 });
